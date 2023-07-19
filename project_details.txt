@@ -1,0 +1,10 @@
+fontes:
+	Marvel
+	Inter
+	Moon Dance ?{cursive}
+
+cores:
+	gradient(#121212 to #404040)
+	#fff
+	#D98C19
+	#BBBBBB
