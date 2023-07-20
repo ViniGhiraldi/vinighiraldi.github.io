@@ -1,7 +1,7 @@
 import fotoDePerfil from './assets/perfil.png';
 import { motion } from 'framer-motion';
 import { Header, SVGOrangeBubble, SVGOrangeLeftTopBubble, SVGTriangleDivider } from './shared/components';
-import { ChevronDown, Link } from 'lucide-react';
+import { ChevronDown, Github, Link, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Environment } from './shared/environment/Environment';
 
@@ -28,10 +28,23 @@ export const App = () => {
       <Header/>
       <div id='home' className='min-h-screen pt-16 relative flex flex-col justify-center items-center bg-gradient-to-b from-[#272727] to-[#111111]'>
         <SVGOrangeLeftTopBubble className='absolute top-0 left-0 max-h-40'/>
-        <div className='container px-8 flex md:flex-col md:items-center md:gap-20 justify-around items-start'>
-          <div className='md:text-center'>
-            <motion.h1 className='text-5xl text-white font-moondance tracking-tighter'>Eu sou <motion.span whileHover={{letterSpacing: 0}} className='text-orange-500 font-marvel'>Vinícius Correia Ghiraldi</motion.span></motion.h1>
-            <p className='font-inter text-xl text-zinc-400 tracking-tighter'>Desenvolvedor Full-Stack</p>
+        <div className='container px-8 flex md:flex-col md:items-center md:gap-20 justify-around'>
+          <div className='md:text-center flex flex-col justify-between'>
+            <div>
+              <motion.h1 className='text-5xl text-white font-moondance tracking-tighter leading-10'>Eu sou <motion.span whileHover={{letterSpacing: 0}} className='md:text-4xl bg-gradient-to-r font-inter from-orange-500 to-red-500 bg-clip-text text-transparent'>Vinícius Correia Ghiraldi</motion.span></motion.h1>
+              <p className='font-inter text-xl text-zinc-400 tracking-tighter'>Desenvolvedor Full-Stack</p>
+            </div>
+            <div className='flex gap-8'>
+              <motion.a href='mailto:vinighiraldi198@gmail.com' target='_blank' whileHover={{scale: 1.25}} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black'>
+                <Mail className='text-zinc-900' size={36}/>
+              </motion.a>
+              <motion.a href='https://github.com/vinighiraldi' target='_blank' whileHover={{scale: 1.25}} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black'>
+                <Github className='text-zinc-900' size={36}/>
+              </motion.a>
+              <motion.a href='https://www.linkedin.com/in/vinighiraldi/' target='_blank' whileHover={{scale: 1.25}} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black'>
+                <Linkedin className='text-zinc-900' size={36}/>
+              </motion.a>
+            </div>
           </div>
           <div className='flex items-center justify-center xs:hidden'>
             <SVGOrangeBubble className='absolute md:hidden max-h-[80vh]'/>
@@ -48,7 +61,7 @@ export const App = () => {
           <ChevronDown className='text-white' size={52} strokeWidth={1.5}/>
         </a>
       </div>
-      <div id='projects' className='min-h-screen flex flex-col relative bg-gradient-to-b from-orange-500 to-red-500'>
+      <div id='projects' className='min-h-screen flex flex-col relative bg-zinc-800'>
         <SVGTriangleDivider className="absolute top-0 left-0 w-full overflow-hidden leading-[0]"/>
         <div className='container mt-44 flex flex-col items-center gap-12'>
           <h1 className='text-5xl font-inter uppercase font-bold'>Projetos</h1>
