@@ -1,4 +1,5 @@
 import fotoDePerfil from './assets/perfil.png';
+import fotoApontando from './assets/apontando.png';
 import { motion } from 'framer-motion';
 import { Header, SVGOrangeBubble, SVGOrangeLeftTopBubble, SVGTriangleDivider } from './shared/components';
 import { ChevronDown, Github, Link, Linkedin, Mail } from 'lucide-react';
@@ -27,14 +28,14 @@ export const App = () => {
     <div className='min-h-screen flex flex-col'>
       <Header/>
       <div id='home' className='min-h-screen pt-16 relative flex flex-col justify-center items-center bg-gradient-to-b from-[#272727] to-[#111111]'>
-        <SVGOrangeLeftTopBubble className='absolute top-0 left-0 max-h-40'/>
+        {/* <SVGOrangeLeftTopBubble className='absolute top-0 left-0 max-h-40'/> */}
         <div className='container px-8 flex md:flex-col md:items-center md:gap-20 justify-around'>
-          <div className='md:text-center flex flex-col justify-between'>
+          <div className='md:text-center flex flex-col gap-8 justify-between'>
             <div>
-              <motion.h1 className='text-5xl text-white font-moondance tracking-tighter leading-10'>Eu sou <motion.span whileHover={{letterSpacing: 0}} className='md:text-4xl bg-gradient-to-r font-inter from-orange-500 to-red-500 bg-clip-text text-transparent'>Vinícius Correia Ghiraldi</motion.span></motion.h1>
-              <p className='font-inter text-xl text-zinc-400 tracking-tighter'>Desenvolvedor Full-Stack</p>
+              <motion.h1 className='text-5xl md:text-4xl text-white tracking-tighter'>Eu sou <motion.span whileHover={{letterSpacing: 0}} className='bg-gradient-to-r font-bold from-orange-500 to-red-500 bg-clip-text text-transparent'>Vinícius Correia Ghiraldi</motion.span></motion.h1>
+              <p className='font-inter text-lg text-zinc-400 tracking-widest'>Desenvolvedor Web</p>
             </div>
-            <div className='flex gap-8'>
+            <div className='flex md:justify-center gap-8'>
               <motion.a href='mailto:vinighiraldi198@gmail.com' target='_blank' whileHover={{scale: 1.25}} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black'>
                 <Mail className='text-zinc-900' size={36}/>
               </motion.a>
@@ -57,14 +58,33 @@ export const App = () => {
             />
           </div>
         </div>
-        <a href='#projects' className='absolute bottom-0 animate-bounce'>
+        <a href='#about' className='absolute bottom-0 animate-bounce'>
           <ChevronDown className='text-white' size={52} strokeWidth={1.5}/>
         </a>
       </div>
-      <div id='projects' className='min-h-screen flex flex-col relative bg-zinc-800'>
+      <div id='about' className='min-h-screen flex flex-col relative bg-[#272727]'>
         <SVGTriangleDivider className="absolute top-0 left-0 w-full overflow-hidden leading-[0]"/>
-        <div className='container mt-44 flex flex-col items-center gap-12'>
-          <h1 className='text-5xl font-inter uppercase font-bold'>Projetos</h1>
+        <div className='mt-44 p-8 flex justify-around items-center gap-12'>
+          <div className='bg-orange-500 p-2 rounded-md rounded-tr-3xl rounded-bl-3xl shadow-xl md:hidden'>
+            <img src={fotoApontando} className='h-72 rounded-bl-3xl' alt='Vinícius Correia Ghiraldi' />
+          </div>
+          <div className='space-y-4'>
+            <h1 className='text-center text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent'>Quem Sou Eu</h1>
+            <p className='max-w-sm text-white text-lg font-inter font-light leading-5'>Nascido em 2004 no interior de São Paulo, conheci a programação no ano de 2020 em uma escola técnica. Foi amor a primeira vista, já que eu sempre gostei de desafios de lógica. Em 2023 me tornei um intusiasta de JavaScript, e desde então tenho focado em aprender sobre ReactJs, NodeJs e TypeScript. Em Julho do mesmo ano iniciei uma graduação em Engenharia de Software na Unicesumar. Além de programação, adoro atividades físicas e esportes, e no meu tempo livre gosto de me divertir e competir em jogos online.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id='projects' className='min-h-screen flex flex-col relative bg-[#111111]'>
+        
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
+            <svg data-name="Layer 1" className='relative block w-[calc(100%+1.3px)] h-20' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" className="fill-[#272727]"></path>
+            </svg>
+        </div>
+
+        <div className='container mt-28 p-8 flex flex-col items-center gap-12'>
+          <h1 className='text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent'>Projetos</h1>
           <div className='grid grid-cols-2 sm:grid-cols-1 p-8 gap-8 rounded-3xl sm:rounded-lg shadow-[0_0_30px_#00000099] bg-gradient-to-br from-[#272727] to-[#111111]'>
             {repositories.map((repo, i) => (
               <motion.a key={i} whileHover={{scale: 1.025}} href={repo.html_url} target='_blank' className='p-4 rounded-md shadow-[0_5px_10px_0_#00000099] grid-cols-1 border-2 border-orange-500 text-white '>
@@ -79,6 +99,7 @@ export const App = () => {
           </div>
         </div>
       </div>
+
     </div>
   )
 }

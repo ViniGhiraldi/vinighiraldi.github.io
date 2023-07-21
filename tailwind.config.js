@@ -5,9 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'marvel': ['Marvel', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
-        'moondance': ['Moon Dance', 'cursive']
+        'exo': ['Exo', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif']
       }
     },
     screens: {
