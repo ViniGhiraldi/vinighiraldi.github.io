@@ -83,7 +83,7 @@ export const App = () => {
             </svg>
         </div>
 
-        <div className='container mt-28 p-8 flex flex-col items-center gap-12'>
+        <div className='container mt-28 py-8 flex flex-col items-center gap-12'>
           <h1 className='text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent'>Projetos</h1>
           <div className='grid grid-cols-2 sm:grid-cols-1 p-8 gap-8 rounded-3xl sm:rounded-lg shadow-[0_0_30px_#00000099] bg-gradient-to-br from-[#272727] to-[#111111]'>
             {repositories.map((repo, i) => (
