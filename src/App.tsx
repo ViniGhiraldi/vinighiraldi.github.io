@@ -1,7 +1,7 @@
 import fotoDePerfil from './assets/perfil.png';
 import fotoApontando from './assets/apontando.png';
 import { motion } from 'framer-motion';
-import { Header, SVGOrangeBubble, SVGOrangeLeftTopBubble, SVGTriangleDivider } from './shared/components';
+import { Box, Header, SVGOrangeBubble, SVGTriangleDivider } from './shared/components';
 import { ChevronDown, Github, Link, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Environment } from './shared/environment/Environment';
@@ -29,7 +29,7 @@ export const App = () => {
       <Header/>
       <div id='home' className='min-h-screen pt-16 relative flex flex-col justify-center items-center bg-gradient-to-b from-[#272727] to-[#111111]'>
         {/* <SVGOrangeLeftTopBubble className='absolute top-0 left-0 max-h-40'/> */}
-        <div className='container px-8 flex md:flex-col md:items-center md:gap-20 justify-around'>
+        <Box className='container px-8 flex md:flex-col md:items-center md:gap-20 justify-around'>
           <div className='md:text-center flex flex-col gap-8 justify-between'>
             <div>
               <motion.h1 className='text-5xl md:text-4xl text-white tracking-tighter'>Eu sou <motion.span whileHover={{letterSpacing: 0}} className='bg-gradient-to-r font-bold from-orange-500 to-red-500 bg-clip-text text-transparent'>Vinícius Correia Ghiraldi</motion.span></motion.h1>
@@ -57,14 +57,14 @@ export const App = () => {
             alt='Vinícius Correia Ghiraldi'
             />
           </div>
-        </div>
+        </Box>
         <a href='#about' className='absolute bottom-0 animate-bounce'>
           <ChevronDown className='text-white' size={52} strokeWidth={1.5}/>
         </a>
       </div>
-      <div id='about' className='min-h-screen flex flex-col relative bg-[#272727]'>
+      <div id='about' className='flex flex-col relative bg-[#272727]'>
         <SVGTriangleDivider className="absolute top-0 left-0 w-full overflow-hidden leading-[0]"/>
-        <div className='mt-44 p-8 flex justify-around items-center gap-12'>
+        <Box className='mt-44 p-8 pb-12 flex justify-around items-center gap-12'>
           <div className='bg-orange-500 p-2 rounded-md rounded-tr-3xl rounded-bl-3xl shadow-xl md:hidden'>
             <img src={fotoApontando} className='h-72 rounded-bl-3xl' alt='Vinícius Correia Ghiraldi' />
           </div>
@@ -72,7 +72,7 @@ export const App = () => {
             <h1 className='text-center text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent'>Quem Sou Eu</h1>
             <p className='max-w-sm text-white text-lg font-inter font-light leading-5'>Nascido em 2004 no interior de São Paulo, conheci a programação no ano de 2020 em uma escola técnica. Foi amor a primeira vista, já que eu sempre gostei de desafios de lógica. Em 2023 me tornei um intusiasta de JavaScript, e desde então tenho focado em aprender sobre ReactJs, NodeJs e TypeScript. Em Julho do mesmo ano iniciei uma graduação em Engenharia de Software na Unicesumar. Além de programação, adoro atividades físicas e esportes, e no meu tempo livre gosto de me divertir e competir em jogos online.</p>
           </div>
-        </div>
+        </Box>
       </div>
 
       <div id='projects' className='min-h-screen flex flex-col relative bg-[#111111]'>
@@ -83,7 +83,7 @@ export const App = () => {
             </svg>
         </div>
 
-        <div className='container mt-28 py-8 flex flex-col items-center gap-12'>
+        <Box className='container mt-28 py-8 flex flex-col items-center gap-12'>
           <h1 className='text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent'>Projetos</h1>
           <div className='grid grid-cols-2 sm:grid-cols-1 p-8 gap-8 rounded-3xl sm:rounded-lg shadow-[0_0_30px_#00000099] bg-gradient-to-br from-[#272727] to-[#111111]'>
             {repositories.map((repo, i) => (
@@ -97,7 +97,7 @@ export const App = () => {
               </motion.a>
             ))}
           </div>
-        </div>
+        </Box>
       </div>
 
     </div>
