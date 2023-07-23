@@ -3,8 +3,8 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const variants: Variants = {
-    visible: { opacity: 1, scale: 1, transition: { duration: .5 } },
-    hidden: { opacity: 0, scale: .75 }
+    visible: { opacity: 1, transition: { duration: .5, ease: 'easeInOut' } },
+    hidden: { opacity: 0 }
 }
 
 interface IBox extends HTMLMotionProps<'div'>{
