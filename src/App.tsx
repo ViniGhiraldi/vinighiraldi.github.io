@@ -27,6 +27,7 @@ export const App = () => {
   return (
     <div className='min-h-screen flex flex-col'>
       <Header />
+      <span className='fixed bottom-0 left-1/2 -translate-x-1/2 font-bold text-xl text-white z-50 line-clamp-1'>Em progresso...</span>
       {/* Home */}
       <div id='home' className='min-h-screen pt-16 relative flex flex-col justify-center items-center bg-gradient-to-b from-[#272727] to-[#111111]'>
         <Box className='container px-8 flex md:flex-col md:items-center gap-12 justify-around'>
