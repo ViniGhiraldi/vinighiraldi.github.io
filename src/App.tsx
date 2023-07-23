@@ -2,7 +2,7 @@ import fotoDePerfil from './assets/perfil.png';
 import fotoApontando from './assets/apontando.png';
 import { motion } from 'framer-motion';
 import { Box, Header, SVGInvertedArrowDivider, SVGOrangeBubble, SVGTiltDivider, SVGTriangleDivider } from './shared/components';
-import { Check, CheckCircle, ChevronDown, Github, GraduationCap, Hourglass, Landmark, Link, Linkedin, Mail } from 'lucide-react';
+import { CheckCircle, ChevronDown, Github, GraduationCap, Hourglass, Landmark, Link, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Environment } from './shared/environment/Environment';
 

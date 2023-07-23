@@ -41,7 +41,7 @@ export const Header = () => {
           <a href='#about' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Sobre</a>
           <a href='#projects' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Projetos</a>
           <a href='#education' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Educação</a>
-          <a href='#contact' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Contato</a>
+          {/* <a href='#contact' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Contato</a> */}
         </nav>
         <nav className='hidden md:flex'>
           <button onClick={() => setIsOpen(oldIsOpen => !oldIsOpen)}>
@@ -56,7 +56,7 @@ export const Header = () => {
             <li className='text-3xl font-bold'><a href="#about" className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Sobre</a></li>
             <li className='text-3xl font-bold'><a href="#projects" className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Projetos</a></li>
             <li className='text-3xl font-bold'><a href="#education" className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Educação</a></li>
-            <li className='text-3xl font-bold'><a href="#contact" className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Contato</a></li>
+            {/* <li className='text-3xl font-bold'><a href="#contact" className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Contato</a></li> */}
           </ul>
         </nav>
       </div>
