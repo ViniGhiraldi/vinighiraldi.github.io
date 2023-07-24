@@ -1,7 +1,7 @@
 import fotoDePerfil from './assets/perfil.png';
 import fotoApontando from './assets/apontando.png';
 import { motion } from 'framer-motion';
-import { Box, Header, SVGInvertedArrowDivider, SVGOrangeBubble, SVGTiltDivider, SVGTriangleDivider } from './shared/components';
+import { Box, Header, SVGInvertedArrowDivider, SVGJavaScript, SVGNodeJs, SVGOrangeBubble, SVGReactJs, SVGTiltDivider, SVGTriangleDivider } from './shared/components';
 import { CheckCircle, ChevronDown, Github, GraduationCap, Hourglass, Landmark, Link, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Environment } from './shared/environment/Environment';
@@ -35,15 +35,26 @@ export const App = () => {
             <div>
               <motion.h1 className='text-5xl md:text-4xl text-white tracking-tighter'>Eu sou <motion.span whileHover={{ letterSpacing: 0 }} className='bg-gradient-to-r font-bold from-orange-500 to-red-500 bg-clip-text text-transparent'>Vinícius Correia Ghiraldi</motion.span></motion.h1>
               <p className='font-inter text-lg text-zinc-400 tracking-widest'>Desenvolvedor Web</p>
+              <div className='flex md:justify-center gap-4 mt-4'>
+                <div title='JavaScript'>
+                  <SVGJavaScript className='grayscale transition-all hover:grayscale-0'/>
+                </div>
+                <div title='ReactJs'>
+                  <SVGReactJs className='grayscale transition-all hover:grayscale-0' title='JavaScript'/>
+                </div>
+                <div title='NodeJs'>
+                  <SVGNodeJs className='grayscale transition-all hover:grayscale-0' title='JavaScript'/>
+                </div>
+              </div>
             </div>
             <div className='flex md:justify-center gap-8'>
-              <motion.a href='mailto:vinighiraldi198@gmail.com' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black'>
+              <motion.a href='mailto:vinighiraldi198@gmail.com' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black' title='E-mail'>
                 <Mail className='text-zinc-900' size={36} />
               </motion.a>
-              <motion.a href='https://github.com/vinighiraldi' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black'>
+              <motion.a href='https://github.com/vinighiraldi' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black' title='GitHub'>
                 <Github className='text-zinc-900' size={36} />
               </motion.a>
-              <motion.a href='https://www.linkedin.com/in/vinighiraldi/' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black'>
+              <motion.a href='https://www.linkedin.com/in/vinighiraldi/' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black' title='LinkedIn'>
                 <Linkedin className='text-zinc-900' size={36} />
               </motion.a>
             </div>
