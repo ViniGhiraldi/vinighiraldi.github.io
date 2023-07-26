@@ -29,6 +29,12 @@ export default {
       // => @media (max-width: 576px) { ... }
     }
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')({nocompatible: true}),
+    require('tailwind-scrollbar-hide')
+  ],
+  variants: {
+    scrollbar: ['rounded']
+  }
 }
 

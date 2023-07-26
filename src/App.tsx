@@ -1,8 +1,9 @@
 import fotoDePerfil from './assets/perfil.png';
 import fotoApontando from './assets/apontando.png';
 import { motion } from 'framer-motion';
-import { Box, Header, SVGInvertedArrowDivider, SVGJavaScript, SVGNodeJs, SVGOrangeBubble, SVGReactJs, SVGTiltDivider, SVGTriangleDivider } from './shared/components';
-import { CheckCircle, ChevronDown, Github, GraduationCap, Hourglass, Landmark, Link, Linkedin, Mail } from 'lucide-react';
+import { Box, Carousel, EducationCard, Header, SVGArrow, SVGInvertedArrowDivider, SVGInvertedTriangleDivider, SVGOrangeBubble, SVGTiltDivider, SVGTriangleDivider, SkillCard } from './shared/components';
+import { LuChevronDown, LuGithub, LuLink, LuLinkedin, LuMail } from 'react-icons/lu';
+import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiTailwindcss, SiStyledcomponents, SiMui, SiFigma, SiGit, SiAxios, SiBootstrap, SiJquery, SiVite, SiPostgresql, SiSqlite, SiExpress, SiReactrouter, SiJest, SiJsonwebtokens } from 'react-icons/si';
 import { useEffect, useState } from 'react';
 import { Environment } from './shared/environment/Environment';
 
@@ -33,29 +34,25 @@ export const App = () => {
         <Box className='container px-8 flex md:flex-col md:items-center gap-12 justify-around'>
           <div className='md:text-center flex flex-col gap-8 justify-between'>
             <div>
-              <motion.h1 className='text-5xl md:text-4xl text-white tracking-tighter'>Eu sou <motion.span whileHover={{ letterSpacing: 0 }} className='bg-gradient-to-r font-bold from-orange-500 to-red-500 bg-clip-text text-transparent'>Vinícius Correia Ghiraldi</motion.span></motion.h1>
+              <motion.h1 className='text-5xl md:text-4xl text-white tracking-tighter line-clamp-3'>Eu sou <motion.span whileHover={{ letterSpacing: 0 }} className='bg-gradient-to-r font-bold from-orange-500 to-red-500 bg-clip-text text-transparent'>Vinícius Correia Ghiraldi</motion.span></motion.h1>
               <p className='font-inter text-lg text-zinc-400 tracking-widest'>Desenvolvedor Web</p>
-              <div className='flex md:justify-center gap-4 mt-4'>
-                <div title='JavaScript'>
-                  <SVGJavaScript className='grayscale transition-all hover:grayscale-0'/>
-                </div>
-                <div title='ReactJs'>
-                  <SVGReactJs className='grayscale transition-all hover:grayscale-0' title='JavaScript'/>
-                </div>
-                <div title='NodeJs'>
-                  <SVGNodeJs className='grayscale transition-all hover:grayscale-0' title='JavaScript'/>
-                </div>
+              <div className='flex flex-wrap md:justify-center items-center gap-4 mt-4'>
+                <SiHtml5 className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#F16529]' title='HTML5'/>
+                <SiCss3 className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#379AD6]' title='CSS3'/>
+                <SiJavascript className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#F8DC3E]' title='JavaScript'/>
+                <SiReact className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#61DBFB]' title='ReactJs'/>
+                <SiNodedotjs className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#80BD41]' title='NodeJs'/>
               </div>
             </div>
-            <div className='flex md:justify-center gap-8'>
+            <div className='flex flex-wrap md:justify-center gap-8'>
               <motion.a href='mailto:vinighiraldi198@gmail.com' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black' title='E-mail'>
-                <Mail className='text-zinc-900' size={36} />
+                <LuMail className='text-zinc-900 h-9 w-9'/>
               </motion.a>
               <motion.a href='https://github.com/vinighiraldi' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black' title='GitHub'>
-                <Github className='text-zinc-900' size={36} />
+                <LuGithub className='text-zinc-900 h-9 w-9'/>
               </motion.a>
               <motion.a href='https://www.linkedin.com/in/vinighiraldi/' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black' title='LinkedIn'>
-                <Linkedin className='text-zinc-900' size={36} />
+                <LuLinkedin className='text-zinc-900 h-9 w-9' />
               </motion.a>
             </div>
           </div>
@@ -71,7 +68,7 @@ export const App = () => {
           </div>
         </Box>
         <a href='#about' className='absolute bottom-0 animate-bounce'>
-          <ChevronDown className='text-white' size={52} strokeWidth={1.5} />
+          <LuChevronDown className='text-white h-12 w-12' strokeWidth={1.5} />
         </a>
       </div>
       {/* About */}
@@ -82,24 +79,70 @@ export const App = () => {
             <img src={fotoApontando} className='h-72 rounded-bl-3xl' alt='Vinícius Correia Ghiraldi' />
           </div>
           <div className='space-y-4'>
-            <h1 className='text-center text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent'>Quem Sou Eu</h1>
+            <h1 className='text-center text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent line-clamp-2'>Quem Sou Eu</h1>
             <p className='max-w-sm text-white text-lg font-inter font-light leading-5'>Nascido em 2004 no interior de São Paulo, conheci a programação no ano de 2020 em uma escola técnica. Foi amor a primeira vista, já que eu sempre gostei de desafios de lógica. Em 2023 me tornei um intusiasta de JavaScript, e desde então tenho focado em aprender sobre ReactJs, NodeJs e TypeScript. Em Julho do mesmo ano iniciei uma graduação em Engenharia de Software na Unicesumar. Além de programação, adoro atividades físicas e esportes, e no meu tempo livre gosto de me divertir e competir em jogos online.</p>
           </div>
         </Box>
       </div>
 
+      {/* Skills */}
+
+      <div id='skills' className='flex flex-col relative bg-gradient-to-b from-orange-500 to-red-500'>
+        <SVGInvertedTriangleDivider className="absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180"/>
+
+        <Box className='my-20 p-8 sm:px-0 pt-0 sm:pt-8'>
+          <div className=''>
+            <SVGArrow className="rotate-180 sm:hidden"/>
+            <div className='p-8 sm:rounded-none rounded-3xl bg-[#111111c5] shadow-[0_10px_10px_-10px_#00000099] flex flex-col gap-8'>
+              <h1 className='text-5xl font-bold tracking-tighter text-center bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 text-transparent line-clamp-1'>Habilidades</h1>
+              <div className='space-y-4'>
+                <h2 className='text-3xl font-inter font-bold text-red-500'>Front-End</h2>
+                <Carousel>
+                  <SkillCard icon={<SiAxios className='h-10 w-10 fill-zinc-400'/>} name='Axios'/>
+                  <SkillCard icon={<SiBootstrap className='h-10 w-10 fill-zinc-400'/>} name='Bootstrap'/>
+                  <SkillCard icon={<SiJquery className='h-10 w-10 fill-zinc-400'/>} name='JQuery'/>
+                  <SkillCard icon={<SiMui className='h-10 w-10 fill-zinc-400'/>} name='MUI'/>
+                  <SkillCard icon={<SiReactrouter className='h-10 w-10 fill-zinc-400'/>} name='React Router'/>
+                  <SkillCard icon={<SiStyledcomponents className='h-10 w-10 fill-zinc-400'/>} name='Styled Components'/>
+                  <SkillCard icon={<SiTailwindcss className='h-10 w-10 fill-zinc-400'/>} name='TailwindCSS'/>
+                </Carousel>
+              </div>
+              <div className='space-y-4'>
+                <h2 className='text-3xl font-inter font-bold text-red-500'>Back-End</h2>
+                <Carousel>
+                  <SkillCard icon={<SiExpress className='h-10 w-10 fill-zinc-400'/>} name='Express'/>
+                  <SkillCard icon={<SiJest className='h-10 w-10 fill-zinc-400'/>} name='Jest'/>
+                  <SkillCard icon={<SiJsonwebtokens className='h-10 w-10 fill-zinc-400'/>} name='JsonWebTokens'/>
+                  <SkillCard icon={<SiPostgresql className='h-10 w-10 fill-zinc-400'/>} name='PostgreSQL'/>
+                  <SkillCard icon={<SiSqlite className='h-10 w-10 fill-zinc-400'/>} name='SQLite'/>
+                </Carousel>
+              </div>
+              <div className='space-y-4'>
+                <h2 className='text-3xl font-inter font-bold text-red-500'>Outros</h2>
+                <Carousel>
+                  <SkillCard icon={<SiFigma className='h-10 w-10 fill-zinc-400'/>} name='Figma'/>
+                  <SkillCard icon={<SiGit className='h-10 w-10 fill-zinc-400'/>} name='Git'/>
+                  <SkillCard icon={<SiTypescript className='h-10 w-10 fill-zinc-400'/>} name='TypeScript'/>
+                  <SkillCard icon={<SiVite className='h-10 w-10 fill-zinc-400'/>} name='Vite'/>
+                </Carousel>
+              </div>
+            </div>
+          </div>
+        </Box>
+        <SVGTiltDivider className='absolute bottom-0 left-0 w-full overflow-hidden leading-[0] rotate-180'/>
+      </div>
+
       {/* Projects */}
 
       <div id='projects' className='flex flex-col relative bg-[#111111]'>
-        <SVGTiltDivider className='absolute top-0 left-0 w-full overflow-hidden leading-[0]'/>
-        <Box className='container mt-20 py-8 flex flex-col items-center gap-12'>
-          <h1 className='text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent'>Projetos</h1>
+        <Box className='container py-8 flex flex-col items-center gap-12'>
+          <h1 className='text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent line-clamp-1'>Projetos</h1>
           <div className='grid grid-cols-2 sm:grid-cols-1 p-8 gap-8 rounded-3xl sm:rounded-lg shadow-[0_0_30px_#00000099] bg-gradient-to-br from-[#272727] to-[#111111]'>
             {repositories.map((repo, i) => (
               <motion.a key={i} whileHover={{ scale: 1.025 }} href={repo.html_url} target='_blank' className='p-4 rounded-md shadow-[0_5px_10px_0_#00000099] grid-cols-1 border-2 border-orange-500 text-white '>
                 <div className='flex justify-between items-center gap-4'>
                   <h1 className='text-xl tracking-wider line-clamp-1' title={repo.full_name}>{repo.full_name}</h1>
-                  <Link className='text-zinc-400' size={20} />
+                  <LuLink className='text-zinc-400 min-h-[20px] h-5 min-w-[20px] w-5' />
                 </div>
                 <p className='text-base font-inter'>{repo.description}</p>
                 <span className='font-mono font-bold tracking-wider px-4 rounded-full shadow-md bg-gradient-to-b from-orange-500 to-red-500 line-clamp-1 max-w-fit'>{repo.language}</span>
@@ -115,47 +158,13 @@ export const App = () => {
         <SVGInvertedArrowDivider className='absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180'/>
         <Box className='container mt-20 p-8 sm:px-0'>
           <div className='p-8 rounded-3xl sm:rounded-none bg-gradient-to-br from-[#111111] to-[#272727] shadow-[0_0_10px_#00000099] flex flex-col items-center gap-12'>
-            <h1 className='text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent'>Educação</h1>
+            <h1 className='text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent line-clamp-1'>Educação</h1>
 
             <div className='grid grid-cols-2 sm:grid-cols-1 gap-8 w-full items-start'>
-              <div className='relative grid-cols-1 p-4 rounded-md shadow-[0_5px_10px_0_#00000099] bg-gradient-to-br from-orange-500 to-red-500 space-y-2'>
-                
-                <h1 className='text-2xl font-inter tracking-tighter line-clamp-2' title='Análise e Desenvolvimento de Sistemas'>Análise e Desenvolvimento de Sistemas</h1>
-                <div className='px-4 sm:px-0 space-y-4'>
-                  <p className='flex sm:flex-col gap-8 sm:gap-0'>
-                    <Landmark className='min-w-[24px]'/>
-                    <span className='text-base line-clamp-2'>ETEC Dr. Nelson Alves Vianna</span>
-                  </p>
-                  <p className='flex sm:flex-col gap-8 sm:gap-0'>
-                    <GraduationCap className='min-w-[24px]'/>
-                    <span className='text-base line-clamp-2'>Curso técnico</span>
-                  </p>
-                  <p className='flex sm:flex-col gap-8 sm:gap-0'>
-                    <Hourglass className='min-w-[24px]'/>
-                    <span className='text-base line-clamp-2'>3 anos | 2020 - 2023</span>
-                  </p>
-                </div>
-                <CheckCircle className='absolute right-2 bottom-2 text-emerald-500'/>
-              </div>
-              <div className='relative grid-cols-1 p-4 rounded-md shadow-[0_5px_10px_0_#00000099] bg-gradient-to-br from-orange-500 to-red-500 space-y-2'>
-                <h1 className='text-2xl font-inter tracking-tighter line-clamp-2'>Engenharia de Software</h1>
-                <div className='px-4 sm:px-0 space-y-4'>
-                  <p className='flex sm:flex-col gap-8 sm:gap-0'>
-                    <Landmark className='min-w-[24px]'/>
-                    <span className='text-base line-clamp-2'>Unicesumar</span>
-                  </p>
-                  <p className='flex sm:flex-col gap-8 sm:gap-0'>
-                    <GraduationCap className='min-w-[24px]'/>
-                    <span className='text-base line-clamp-2'>Curso superior</span>
-                  </p>
-                  <p className='flex sm:flex-col gap-8 sm:gap-0'>
-                    <Hourglass className='min-w-[24px]'/>
-                    <span className='text-base line-clamp-2'>4 anos | 2023 - 2027</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+              <EducationCard course='Análise e Desenvolvimento de Sistemas' institution='ETEC Dr. Nelson Alves Vianna' graduation='Curso técnico' duration='3 anos | 2020 - 2023' concluded/>
 
+              <EducationCard course='Engenharia de Software' institution='Unicesumar' graduation='Curso superior' duration='4 anos | 2023 - 2027'/>
+            </div>
           </div>
         </Box>
       </div>
