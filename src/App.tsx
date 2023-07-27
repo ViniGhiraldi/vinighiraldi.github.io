@@ -3,7 +3,7 @@ import fotoApontando from './assets/apontando.png';
 import { motion } from 'framer-motion';
 import { Box, Carousel, EducationCard, Header, SVGArrow, SVGInvertedArrowDivider, SVGInvertedTriangleDivider, SVGOrangeBubble, SVGTiltDivider, SVGTriangleDivider, SkillCard } from './shared/components';
 import { LuChevronDown, LuGithub, LuLink, LuLinkedin, LuMail } from 'react-icons/lu';
-import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiTailwindcss, SiStyledcomponents, SiMui, SiFigma, SiGit, SiAxios, SiBootstrap, SiJquery, SiVite, SiPostgresql, SiSqlite, SiExpress, SiReactrouter, SiJest, SiJsonwebtokens } from 'react-icons/si';
+import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiTailwindcss, SiStyledcomponents, SiMui, SiFigma, SiGit, SiAxios, SiBootstrap, SiJquery, SiVite, SiPostgresql, SiSqlite, SiExpress, SiReactrouter, SiJest, SiJsonwebtokens, SiWhatsapp } from 'react-icons/si';
 import { useEffect, useState } from 'react';
 import { Environment } from './shared/environment/Environment';
 
@@ -28,7 +28,8 @@ export const App = () => {
   return (
     <div className='min-h-screen flex flex-col'>
       <Header />
-      <span className='fixed bottom-0 left-1/2 -translate-x-1/2 font-bold text-xl text-white z-50 line-clamp-1'>Em progresso...</span>
+      {/* <span className='fixed bottom-0 left-1/2 -translate-x-1/2 font-bold text-xl text-white z-50 line-clamp-1'>Em progresso...</span> */}
+      <motion.a href='https://api.whatsapp.com/send?phone=5515998613635' whileHover={{scale: 1.1, bottom: '16px'}} target='_blank' className='fixed bottom-3 right-3 z-50 p-3 rounded-full bg-[#25D366] shadow-lg'><SiWhatsapp className='h-6 w-6 text-white'/></motion.a>
       {/* Home */}
       <div id='home' className='min-h-screen pt-16 relative flex flex-col justify-center items-center bg-gradient-to-b from-[#272727] to-[#111111]'>
         <Box className='container px-8 flex md:flex-col md:items-center gap-12 justify-around'>

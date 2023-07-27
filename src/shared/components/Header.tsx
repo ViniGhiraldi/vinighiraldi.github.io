@@ -1,6 +1,7 @@
 import { AnimationSequence, useAnimate } from "framer-motion";
 import { LuMenu } from "react-icons/lu";
 import { useEffect, useState } from "react";
+import { SVGLogo } from ".";
 
 
 export const Header = () => {
@@ -35,7 +36,9 @@ export const Header = () => {
     return(
       <div className='flex flex-col relative'>
       <header className='px-8 h-16 flex justify-between items-center gap-8 text-xl fixed top-0 w-full z-50 backdrop-blur-sm'>
-        <span className='text-white font-bold whitespace-nowrap'>Vinícius Ghiraldi</span>
+        <a href='#home' className='text-white font-bold whitespace-nowrap' title='Vinícius Correia Ghiraldi'>
+          <SVGLogo className='h-12 w-12 fill-white'/>
+        </a>
         <nav className='flex gap-8 text-white font-bold md:hidden'>
           <a href='#home' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Início</a>
           <a href='#about' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Sobre</a>

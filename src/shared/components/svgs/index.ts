@@ -5,3 +5,4 @@ export * from './SVGTriangleDivider';
 export * from './SVGOrangeBubble';
 export * from './SVGTiltDivider';
 export * from './SVGArrow';
+export * from './SVGLogo';
