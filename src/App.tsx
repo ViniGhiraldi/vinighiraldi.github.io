@@ -1,7 +1,7 @@
 import fotoDePerfil from './assets/perfil.png';
 import fotoApontando from './assets/apontando.png';
 import { motion } from 'framer-motion';
-import { Box, Carousel, EducationCard, Header, SVGArrow, SVGInvertedArrowDivider, SVGInvertedTriangleDivider, SVGOrangeBubble, SVGTiltDivider, SVGTriangleDivider, SkillCard } from './shared/components';
+import { Box, Carousel, EducationCard, Header, SVGArrow, SVGInvertedArrowDivider, SVGOrangeBubble, SVGTiltDivider, SVGTriangleDivider, SkillCard } from './shared/components';
 import { LuChevronDown, LuGithub, LuLink, LuLinkedin, LuMail } from 'react-icons/lu';
 import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiTailwindcss, SiStyledcomponents, SiMui, SiFigma, SiGit, SiAxios, SiBootstrap, SiJquery, SiVite, SiPostgresql, SiSqlite, SiExpress, SiReactrouter, SiJest, SiJsonwebtokens, SiWhatsapp } from 'react-icons/si';
 import { useEffect, useState } from 'react';
@@ -29,7 +29,7 @@ export const App = () => {
     <div className='min-h-screen flex flex-col'>
       <Header />
       {/* <span className='fixed bottom-0 left-1/2 -translate-x-1/2 font-bold text-xl text-white z-50 line-clamp-1'>Em progresso...</span> */}
-      <motion.a href='https://api.whatsapp.com/send?phone=5515998613635' whileHover={{scale: 1.1, bottom: '16px'}} target='_blank' className='fixed bottom-3 right-3 z-50 p-3 rounded-full bg-[#25D366] shadow-lg'><SiWhatsapp className='h-6 w-6 text-white'/></motion.a>
+      <motion.a href='https://api.whatsapp.com/send?phone=5515998613635' whileHover={{ scale: 1.1, bottom: '16px' }} target='_blank' className='fixed bottom-3 right-3 z-50 p-3 rounded-full bg-[#25D366] shadow-lg'><SiWhatsapp className='h-6 w-6 text-white' /></motion.a>
       {/* Home */}
       <div id='home' className='min-h-screen pt-16 relative flex flex-col justify-center items-center bg-gradient-to-b from-[#272727] to-[#111111]'>
         <Box className='container px-8 flex md:flex-col md:items-center gap-12 justify-around'>
@@ -38,19 +38,19 @@ export const App = () => {
               <motion.h1 className='text-5xl md:text-4xl text-white tracking-tighter line-clamp-3'>Eu sou <motion.span whileHover={{ letterSpacing: 0 }} className='bg-gradient-to-r font-bold from-orange-500 to-red-500 bg-clip-text text-transparent'>Vinícius Correia Ghiraldi</motion.span></motion.h1>
               <p className='font-inter text-lg text-zinc-400 tracking-widest'>Desenvolvedor Web</p>
               <div className='flex flex-wrap md:justify-center items-center gap-4 mt-4'>
-                <SiHtml5 className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#F16529]' title='HTML5'/>
-                <SiCss3 className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#379AD6]' title='CSS3'/>
-                <SiJavascript className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#F8DC3E]' title='JavaScript'/>
-                <SiReact className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#61DBFB]' title='ReactJs'/>
-                <SiNodedotjs className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#80BD41]' title='NodeJs'/>
+                <SiHtml5 className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#F16529]' title='HTML5' />
+                <SiCss3 className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#379AD6]' title='CSS3' />
+                <SiJavascript className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#F8DC3E]' title='JavaScript' />
+                <SiReact className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#61DBFB]' title='ReactJs' />
+                <SiNodedotjs className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#80BD41]' title='NodeJs' />
               </div>
             </div>
             <div className='flex flex-wrap md:justify-center gap-8'>
               <motion.a href='mailto:vinighiraldi198@gmail.com' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black' title='E-mail'>
-                <LuMail className='text-zinc-900 h-9 w-9'/>
+                <LuMail className='text-zinc-900 h-9 w-9' />
               </motion.a>
               <motion.a href='https://github.com/vinighiraldi' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black' title='GitHub'>
-                <LuGithub className='text-zinc-900 h-9 w-9'/>
+                <LuGithub className='text-zinc-900 h-9 w-9' />
               </motion.a>
               <motion.a href='https://www.linkedin.com/in/vinighiraldi/' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black' title='LinkedIn'>
                 <LuLinkedin className='text-zinc-900 h-9 w-9' />
@@ -79,58 +79,64 @@ export const App = () => {
           <div className='bg-orange-500 p-2 rounded-md rounded-tr-3xl rounded-bl-3xl shadow-xl md:hidden'>
             <img src={fotoApontando} className='h-72 rounded-bl-3xl' alt='Vinícius Correia Ghiraldi' />
           </div>
-          <div className='space-y-4'>
-            <h1 className='text-center text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent line-clamp-2'>Quem Sou Eu</h1>
+          <div className='flex flex-col items-center gap-4'>
+            <h1 className='text-center text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent line-clamp-2 w-fit'>Quem Sou Eu</h1>
             <p className='max-w-sm text-white text-lg font-inter font-light leading-5'>Nascido em 2004 no interior de São Paulo, conheci a programação no ano de 2020 em uma escola técnica. Foi amor a primeira vista, já que eu sempre gostei de desafios de lógica. Em 2023 me tornei um intusiasta de JavaScript, e desde então tenho focado em aprender sobre ReactJs, NodeJs e TypeScript. Em Julho do mesmo ano iniciei uma graduação em Engenharia de Software na Unicesumar. Além de programação, adoro atividades físicas e esportes, e no meu tempo livre gosto de me divertir e competir em jogos online.</p>
           </div>
         </Box>
       </div>
 
+      {/* Experience */}
+
+      {/* <div id='experience' className='min-h-screen flex flex-col relative bg-[#111111]'>
+        <SVGInvertedTriangleDivider className="absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180" />
+
+        <Box className='container mt-20 p-8 flex flex-col items-center gap-12'>
+          <h1 className='text-5xl font-bold tracking-tighter text-center bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 text-transparent line-clamp-1'>Experiência</h1>
+        </Box>
+      </div> */}
+
       {/* Skills */}
 
-      <div id='skills' className='flex flex-col relative bg-gradient-to-b from-orange-500 to-red-500'>
-        <SVGInvertedTriangleDivider className="absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180"/>
-
-        <Box className='my-20 p-8 sm:px-0 pt-0 sm:pt-8'>
-          <div className=''>
-            <SVGArrow className="rotate-180 sm:hidden"/>
-            <div className='p-8 sm:rounded-none rounded-3xl bg-[#111111c5] shadow-[0_10px_10px_-10px_#00000099] flex flex-col gap-8'>
-              <h1 className='text-5xl font-bold tracking-tighter text-center bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 text-transparent line-clamp-1'>Habilidades</h1>
-              <div className='space-y-4'>
-                <h2 className='text-3xl font-inter font-bold text-red-500'>Front-End</h2>
-                <Carousel>
-                  <SkillCard icon={<SiAxios className='h-10 w-10 fill-zinc-400'/>} name='Axios'/>
-                  <SkillCard icon={<SiBootstrap className='h-10 w-10 fill-zinc-400'/>} name='Bootstrap'/>
-                  <SkillCard icon={<SiJquery className='h-10 w-10 fill-zinc-400'/>} name='JQuery'/>
-                  <SkillCard icon={<SiMui className='h-10 w-10 fill-zinc-400'/>} name='MUI'/>
-                  <SkillCard icon={<SiReactrouter className='h-10 w-10 fill-zinc-400'/>} name='React Router'/>
-                  <SkillCard icon={<SiStyledcomponents className='h-10 w-10 fill-zinc-400'/>} name='Styled Components'/>
-                  <SkillCard icon={<SiTailwindcss className='h-10 w-10 fill-zinc-400'/>} name='TailwindCSS'/>
-                </Carousel>
-              </div>
-              <div className='space-y-4'>
-                <h2 className='text-3xl font-inter font-bold text-red-500'>Back-End</h2>
-                <Carousel>
-                  <SkillCard icon={<SiExpress className='h-10 w-10 fill-zinc-400'/>} name='Express'/>
-                  <SkillCard icon={<SiJest className='h-10 w-10 fill-zinc-400'/>} name='Jest'/>
-                  <SkillCard icon={<SiJsonwebtokens className='h-10 w-10 fill-zinc-400'/>} name='JsonWebTokens'/>
-                  <SkillCard icon={<SiPostgresql className='h-10 w-10 fill-zinc-400'/>} name='PostgreSQL'/>
-                  <SkillCard icon={<SiSqlite className='h-10 w-10 fill-zinc-400'/>} name='SQLite'/>
-                </Carousel>
-              </div>
-              <div className='space-y-4'>
-                <h2 className='text-3xl font-inter font-bold text-red-500'>Outros</h2>
-                <Carousel>
-                  <SkillCard icon={<SiFigma className='h-10 w-10 fill-zinc-400'/>} name='Figma'/>
-                  <SkillCard icon={<SiGit className='h-10 w-10 fill-zinc-400'/>} name='Git'/>
-                  <SkillCard icon={<SiTypescript className='h-10 w-10 fill-zinc-400'/>} name='TypeScript'/>
-                  <SkillCard icon={<SiVite className='h-10 w-10 fill-zinc-400'/>} name='Vite'/>
-                </Carousel>
-              </div>
+      <div id='skills' className='flex flex-col relative bg-gradient-to-r from-orange-500 to-red-500'>
+        <Box className='mb-20 p-8 sm:px-0'>
+          <SVGArrow className="rotate-180 sm:hidden" />
+          <div className='p-8 sm:rounded-none rounded-3xl bg-[#111111c5] shadow-[0_10px_10px_-10px_#00000099] flex flex-col gap-8 items-start'>
+            <h1 className='text-5xl font-bold tracking-tighter text-center bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 text-transparent line-clamp-1 self-center'>Habilidades</h1>
+            <div className='space-y-4 max-w-full'>
+              <h2 className='text-3xl font-inter font-bold text-red-500'>Front-End</h2>
+              <Carousel>
+                <SkillCard icon={<SiAxios className='h-10 w-10 fill-zinc-400' />} name='Axios' />
+                <SkillCard icon={<SiBootstrap className='h-10 w-10 fill-zinc-400' />} name='Bootstrap' />
+                <SkillCard icon={<SiJquery className='h-10 w-10 fill-zinc-400' />} name='JQuery' />
+                <SkillCard icon={<SiMui className='h-10 w-10 fill-zinc-400' />} name='MUI' />
+                <SkillCard icon={<SiReactrouter className='h-10 w-10 fill-zinc-400' />} name='React Router' />
+                <SkillCard icon={<SiStyledcomponents className='h-10 w-10 fill-zinc-400' />} name='Styled Components' />
+                <SkillCard icon={<SiTailwindcss className='h-10 w-10 fill-zinc-400' />} name='TailwindCSS' />
+              </Carousel>
+            </div>
+            <div className='space-y-4 max-w-full'>
+              <h2 className='text-3xl font-inter font-bold text-red-500'>Back-End</h2>
+              <Carousel>
+                <SkillCard icon={<SiExpress className='h-10 w-10 fill-zinc-400' />} name='Express' />
+                <SkillCard icon={<SiJest className='h-10 w-10 fill-zinc-400' />} name='Jest' />
+                <SkillCard icon={<SiJsonwebtokens className='h-10 w-10 fill-zinc-400' />} name='JsonWebTokens' />
+                <SkillCard icon={<SiPostgresql className='h-10 w-10 fill-zinc-400' />} name='PostgreSQL' />
+                <SkillCard icon={<SiSqlite className='h-10 w-10 fill-zinc-400' />} name='SQLite' />
+              </Carousel>
+            </div>
+            <div className='space-y-4 max-w-full'>
+              <h2 className='text-3xl font-inter font-bold text-red-500'>Outros</h2>
+              <Carousel>
+                <SkillCard icon={<SiFigma className='h-10 w-10 fill-zinc-400' />} name='Figma' />
+                <SkillCard icon={<SiGit className='h-10 w-10 fill-zinc-400' />} name='Git' />
+                <SkillCard icon={<SiTypescript className='h-10 w-10 fill-zinc-400' />} name='TypeScript' />
+                <SkillCard icon={<SiVite className='h-10 w-10 fill-zinc-400' />} name='Vite' />
+              </Carousel>
             </div>
           </div>
         </Box>
-        <SVGTiltDivider className='absolute bottom-0 left-0 w-full overflow-hidden leading-[0] rotate-180'/>
+        <SVGTiltDivider className='absolute bottom-0 left-0 w-full overflow-hidden leading-[0] rotate-180' />
       </div>
 
       {/* Projects */}
@@ -156,15 +162,15 @@ export const App = () => {
       {/* Education */}
 
       <div id='education' className='flex flex-col relative bg-gradient-to-r from-orange-500 to-red-500'>
-        <SVGInvertedArrowDivider className='absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180'/>
+        <SVGInvertedArrowDivider className='absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180' />
         <Box className='container mt-20 p-8 sm:px-0'>
           <div className='p-8 rounded-3xl sm:rounded-none bg-gradient-to-br from-[#111111] to-[#272727] shadow-[0_0_10px_#00000099] flex flex-col items-center gap-12'>
             <h1 className='text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent line-clamp-1'>Educação</h1>
 
             <div className='grid grid-cols-2 sm:grid-cols-1 gap-8 w-full items-start'>
-              <EducationCard course='Análise e Desenvolvimento de Sistemas' institution='ETEC Dr. Nelson Alves Vianna' graduation='Curso técnico' duration='3 anos | 2020 - 2023' concluded/>
+              <EducationCard course='Análise e Desenvolvimento de Sistemas' institution='ETEC Dr. Nelson Alves Vianna' graduation='Curso técnico' duration='3 anos | 2020 - 2023' concluded />
 
-              <EducationCard course='Engenharia de Software' institution='Unicesumar' graduation='Curso superior' duration='4 anos | 2023 - 2027'/>
+              <EducationCard course='Engenharia de Software' institution='Unicesumar' graduation='Curso superior' duration='4 anos | 2023 - 2027' />
             </div>
           </div>
         </Box>
