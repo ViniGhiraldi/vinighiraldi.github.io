@@ -40,12 +40,12 @@ export const Header = () => {
           <SVGLogo className='h-12 w-12 fill-white'/>
         </a>
         <nav className='flex gap-8 text-white font-bold md:hidden'>
-          <a href='#home' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Início</a>
+          <a href='#home' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500 lg:hidden'>Início</a>
           <a href='#about' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Sobre</a>
+          <a href='#experience' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Experiência</a>
           <a href='#skills' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Habilidades</a>
           <a href='#projects' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Projetos</a>
           <a href='#education' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Educação</a>
-          {/* <a href='#contact' className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Contato</a> */}
         </nav>
         <nav className='hidden md:flex'>
           <button onClick={() => setIsOpen(oldIsOpen => !oldIsOpen)}>
@@ -58,10 +58,10 @@ export const Header = () => {
           <ul className='flex h-full max-h-full flex-col items-center p-4 gap-4 overflow-y-auto text-white'>
             <li className='text-3xl font-bold'><a href="#home" className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Início</a></li>
             <li className='text-3xl font-bold'><a href="#about" className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Sobre</a></li>
+            <li className='text-3xl font-bold'><a href="#experience" className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Experiência</a></li>
             <li className='text-3xl font-bold'><a href="#skills" className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Habilidades</a></li>
             <li className='text-3xl font-bold'><a href="#projects" className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Projetos</a></li>
             <li className='text-3xl font-bold'><a href="#education" className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Educação</a></li>
-            {/* <li className='text-3xl font-bold'><a href="#contact" className='relative flex after:content-start after:absolute after:bg-orange-500/50 after:w-full after:h-2 after:bottom-1 after:-z-10 hover:after:bg-red-500'>Contato</a></li> */}
           </ul>
         </nav>
       </div>
