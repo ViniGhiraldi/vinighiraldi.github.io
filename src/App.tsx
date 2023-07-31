@@ -1,8 +1,9 @@
 import fotoDePerfil from './assets/perfil.png';
 import fotoApontando from './assets/apontando.png';
+import curriculo from './assets/curriculo.pdf';
 import { motion } from 'framer-motion';
 import { Box, Carousel, EducationCard, Header, SVGArrow, SVGInvertedArrowDivider, SVGInvertedBookDivider, SVGOrangeBubble, SVGTiltDivider, SVGTriangleDivider, SVGWaveOpacityDivider, SkillCard } from './shared/components';
-import { LuChevronDown, LuGithub, LuLink, LuLinkedin, LuMail } from 'react-icons/lu';
+import { LuChevronDown, LuGithub, LuLink, LuLinkedin, LuMail, LuDownload } from 'react-icons/lu';
 import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiTailwindcss, SiStyledcomponents, SiMui, SiFigma, SiGit, SiAxios, SiBootstrap, SiJquery, SiVite, SiPostgresql, SiSqlite, SiExpress, SiReactrouter, SiJest, SiJsonwebtokens, SiWhatsapp } from 'react-icons/si';
 import { useEffect, useState } from 'react';
 import { Environment } from './shared/environment/Environment';
@@ -45,6 +46,7 @@ export const App = () => {
                 <SiNodedotjs className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#80BD41]' title='NodeJs' />
               </div>
             </div>
+            <motion.a href={curriculo} download whileHover={{scale: 1.1}} className='px-8 py-2 rounded-sm shadow-[0_10px_10px_-10px_#00000099] w-fit bg-gradient-to-r from-orange-500 to-red-500 font-inter tracking-tighter text-xl flex gap-4 items-center'><LuDownload className=''/> Download CV</motion.a>
             <div className='flex flex-wrap md:justify-center gap-8'>
               <motion.a href='mailto:vinighiraldi198@gmail.com' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black' title='E-mail'>
                 <LuMail className='text-zinc-900 h-9 w-9' />
@@ -72,7 +74,9 @@ export const App = () => {
           <LuChevronDown className='text-white h-12 w-12' strokeWidth={1.5} />
         </a>
       </div>
+
       {/* About */}
+
       <div id='about' className='flex flex-col relative bg-[#272727]'>
         <SVGTriangleDivider className="absolute top-0 left-0 w-full overflow-hidden leading-[0]" />
         <Box className='container mt-20 px-8 py-20 flex justify-around items-center gap-12'>
