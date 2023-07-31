@@ -24,8 +24,6 @@ export const Box = ({children, ...rest}: IBox) => {
         }
     }, [inView, control]);
 
-    console.log(inView)
-
     return(
         <motion.div
         variants={variants}

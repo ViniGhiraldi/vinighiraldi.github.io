@@ -16,7 +16,6 @@ export const Carousel = ({children}: ICarousel) => {
         listRef.current!.scrollLeft -= listRef.current!.offsetWidth;
     }
 
-    console.log(listRef.current?.scrollWidth, listRef.current?.offsetWidth)
     return(
         <div className='flex w-full justify-between'>
             {listRef.current?.scrollWidth !== listRef.current?.offsetWidth && (

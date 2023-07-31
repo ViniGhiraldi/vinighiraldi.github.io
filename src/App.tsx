@@ -34,7 +34,7 @@ export const App = () => {
       {/* Home */}
       <div id='home' className='min-h-screen pt-16 relative flex flex-col justify-center items-center bg-gradient-to-b from-[#272727] to-[#111111]'>
         <Box className='container px-8 flex md:flex-col md:items-center gap-12 justify-around'>
-          <div className='md:text-center flex flex-col gap-8 justify-between'>
+          <div className='md:text-center flex flex-col gap-8 justify-between md:items-center'>
             <div>
               <motion.h1 className='text-5xl md:text-4xl text-white tracking-tighter line-clamp-3'>Eu sou <motion.span whileHover={{ letterSpacing: 0 }} className='bg-gradient-to-r font-bold from-orange-500 to-red-500 bg-clip-text text-transparent'>Vinícius Correia Ghiraldi</motion.span></motion.h1>
               <p className='font-inter text-lg text-zinc-400 tracking-widest'>Desenvolvedor Web</p>
@@ -46,8 +46,8 @@ export const App = () => {
                 <SiNodedotjs className='h-8 w-8 transition-colors fill-zinc-500 hover:fill-[#80BD41]' title='NodeJs' />
               </div>
             </div>
-            <motion.a href={curriculo} download whileHover={{scale: 1.1}} className='px-8 py-2 rounded-sm shadow-[0_10px_10px_-10px_#00000099] w-fit bg-gradient-to-r from-orange-500 to-red-500 flex gap-4 items-center md:self-center'><LuDownload className=''/> <span className='font-inter tracking-tighter text-xl line-clamp-1'>Download CV</span></motion.a>
-            <div className='flex flex-wrap md:justify-center gap-8'>
+            <motion.a href={curriculo} download whileHover={{scale: 1.1}} className='px-8 py-2 rounded-sm shadow-[0_10px_10px_-10px_#00000099] w-fit bg-gradient-to-r from-orange-500 to-red-500 flex gap-4 items-center'><LuDownload className=''/> <span className='font-inter tracking-tighter text-xl line-clamp-1'>Download CV</span></motion.a>
+            <div className='flex flex-wrap justify-center w-fit gap-8'>
               <motion.a href='mailto:vinighiraldi198@gmail.com' target='_blank' whileHover={{ scale: 1.25 }} className='p-2 bg-gradient-to-br from-orange-500 to-red-500 hover:bg-gradient-to-tl rounded-full shadow-md shadow-black' title='E-mail'>
                 <LuMail className='text-zinc-900 h-9 w-9' />
               </motion.a>
@@ -63,9 +63,9 @@ export const App = () => {
             <SVGOrangeBubble className='absolute md:hidden max-h-[80vh]' />
             <motion.img
               transition={{ type: 'spring', damping: 11, stiffness: 150 }}
-              whileHover={{ scale: 1.3 }}
+              whileHover={{ scale: 1.1 }}
               src={fotoDePerfil}
-              className='relative h-72 w-auto rounded-full'
+              className='relative h-72 min-w-[17rem] rounded-full'
               alt='Vinícius Correia Ghiraldi'
             />
           </div>
