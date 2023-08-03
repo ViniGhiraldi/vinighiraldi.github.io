@@ -3,7 +3,7 @@ import fotoApontando from './assets/apontando.png';
 import curriculo from './assets/curriculo.pdf';
 import { motion } from 'framer-motion';
 import { Box, Carousel, EducationCard, Header, SVGArrow, SVGInvertedArrowDivider, SVGInvertedBookDivider, SVGOrangeBubble, SVGTiltDivider, SVGTriangleDivider, SVGWaveOpacityDivider, SkillCard } from './shared/components';
-import { LuChevronDown, LuGithub, LuLink, LuLinkedin, LuMail, LuDownload } from 'react-icons/lu';
+import { LuChevronDown, LuGithub, LuLink, LuLinkedin, LuMail, LuDownload, LuGlobe } from 'react-icons/lu';
 import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiTailwindcss, SiStyledcomponents, SiMui, SiFigma, SiGit, SiAxios, SiBootstrap, SiJquery, SiVite, SiPostgresql, SiSqlite, SiExpress, SiReactrouter, SiJest, SiJsonwebtokens, SiWhatsapp } from 'react-icons/si';
 import { useEffect, useState } from 'react';
 import { Environment } from './shared/environment/Environment';
@@ -14,6 +14,7 @@ interface IGitRepos {
   updated_at: string;
   language: string;
   html_url: string;
+  homepage: string;
 }
 
 export const App = () => {
@@ -162,14 +163,19 @@ export const App = () => {
           <h1 className='text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent line-clamp-1'>Projetos</h1>
           <div className='grid grid-cols-2 sm:grid-cols-1 p-8 gap-8 rounded-3xl sm:rounded-lg shadow-[0_0_30px_#00000099] bg-gradient-to-br from-[#272727] to-[#111111]'>
             {repositories.map((repo, i) => (
-              <motion.a key={i} whileHover={{ scale: 1.025 }} href={repo.html_url} target='_blank' className='p-4 rounded-md shadow-[0_5px_10px_0_#00000099] grid-cols-1 border-2 border-orange-500 text-white space-y-4'>
-                <div className='flex justify-between items-center gap-4'>
-                  <h1 className='text-xl tracking-wider line-clamp-1' title={repo.name}>{repo.name}</h1>
-                  <LuLink className='text-zinc-400 min-h-[20px] h-5 min-w-[20px] w-5' />
+              <motion.div key={i} whileHover={{ scale: 1.025 }} className='p-4 rounded-md shadow-[0_5px_10px_0_#00000099] grid-cols-1 border-2 border-orange-500 text-white flex flex-col justify-between gap-4'>
+                <h1 className='text-xl tracking-wider line-clamp-1' title={repo.name}>{repo.name}</h1>
+                <p className='text-base font-inter leading-5 line-clamp-5'>{repo.description}</p>
+                <div className='space-y-2'>
+                  <span className='font-inter text-sm tracking-wider px-4 rounded-full shadow-md bg-gradient-to-b from-orange-500 to-red-500 line-clamp-1 max-w-fit'>{repo.language}</span>
+                  <div className='flex gap-4'>
+                    <a href={repo.html_url} target='_blank' className='p-2 rounded-full hover:bg-black/30' title='Repositório'><LuLink className='h-5 w-5'/></a>
+                    {repo.homepage && (
+                      <a href={repo.homepage} target='_blank' className='p-2 rounded-full hover:bg-black/30' title='WebSite'><LuGlobe className='h-5 w-5'/></a>
+                    )}
+                  </div>
                 </div>
-                <p className='text-base font-inter leading-5'>{repo.description}</p>
-                <span className='font-inter text-sm tracking-wider px-4 rounded-full shadow-md bg-gradient-to-b from-orange-500 to-red-500 line-clamp-1 max-w-fit'>{repo.language}</span>
-              </motion.a>
+              </motion.div>
             ))}
           </div>
         </Box>
