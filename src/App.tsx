@@ -4,7 +4,7 @@ import curriculo from './assets/curriculo.pdf';
 import { motion } from 'framer-motion';
 import { Box, Carousel, EducationCard, Header, SVGArrow, SVGInvertedArrowDivider, SVGInvertedBookDivider, SVGOrangeBubble, SVGTiltDivider, SVGTriangleDivider, SVGWaveOpacityDivider, SkillCard } from './shared/components';
 import { LuChevronDown, LuGithub, LuLink, LuLinkedin, LuMail, LuDownload, LuGlobe } from 'react-icons/lu';
-import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiTailwindcss, SiStyledcomponents, SiMui, SiFigma, SiGit, SiAxios, SiBootstrap, SiJquery, SiVite, SiPostgresql, SiSqlite, SiExpress, SiReactrouter, SiJest, SiJsonwebtokens, SiWhatsapp } from 'react-icons/si';
+import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiTailwindcss, SiStyledcomponents, SiMui, SiFigma, SiGit, SiAxios, SiBootstrap, SiJquery, SiVite, SiPostgresql, SiSqlite, SiExpress, SiReactrouter, SiJest, SiJsonwebtokens, SiWhatsapp, SiNextdotjs } from 'react-icons/si';
 import { useEffect, useState } from 'react';
 import { Environment } from './shared/environment/Environment';
 
@@ -100,7 +100,7 @@ export const App = () => {
           <h1 className='text-5xl font-bold tracking-tighter text-center bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 text-transparent line-clamp-1'>Experiência</h1>
           <div className='relative before:content-normal sm:before:content-none before:block before:absolute before:border-8 before:border-red-500 before:w-full before:h-full'>
             <ul className='flex lg:flex-col text-lg leading-5 font-light gap-4 text-white bg-[#111111] p-8'>
-              <li className='flex xs:flex-col gap-4 font-inter before:content-["2020_2022"] before:relative before:block before:bg-gradient-to-r before:from-orange-500 before:to-red-500 before:bg-clip-text before:text-transparent before:font-bold before:font-exo'>Durante o ano de 2022, apresentei projetos e ideias em Workshops, entre eles um protótipo de um sistema informativo sobre clínicas e hospitais. Seu objetivo era informar ao usuário as instituições mais próximas de sua localização com avaliações de outras pessoas, profissionais atuantes, formações e horários disponiveis, podendo ainda filtrar os resultados por profissionais (cardiologista, veterinário...). Este projeto foi desenvolvido e apresentado no TCC de Desenvolvimento de Sistemas na ETEC Dr. Nelson Alves Vianna e obteve nota máxima.</li>
+              <li className='flex xs:flex-col gap-4 font-inter before:content-["2020_2022"] before:relative before:block before:bg-gradient-to-r before:from-orange-500 before:to-red-500 before:bg-clip-text before:text-transparent before:font-bold before:font-exo'>Durante o ano de 2022, apresentei projetos e ideias em Workshops, entre eles um protótipo de um sistema informativo sobre clínicas e hospitais. Seu objetivo era informar ao usuário as instituições mais próximas de sua localização com avaliações de outras pessoas, profissionais atuantes, formações e horários disponíveis, podendo ainda filtrar os resultados por profissionais (cardiologista, veterinário...). Este projeto foi desenvolvido e apresentado no TCC de Desenvolvimento de Sistemas na ETEC Dr. Nelson Alves Vianna e obteve nota máxima.</li>
               <li className='flex xs:flex-col gap-4 font-inter before:content-["2023"] before:relative before:block before:bg-gradient-to-r before:from-orange-500 before:to-red-500 before:bg-clip-text before:text-transparent before:font-bold before:font-exo'>
                 <span>
                   Estou sempre pronto e em busca de trabalhos voluntários na área de desenvolvimento de software, Atuo através do LinkedIn, entrando em contato com as empresas e do <a href="https://atados.com.br" target='_blank'>Atados</a>.
@@ -147,6 +147,7 @@ export const App = () => {
               <Carousel>
                 <SkillCard icon={<SiFigma className='h-10 w-10 fill-zinc-400' />} name='Figma' />
                 <SkillCard icon={<SiGit className='h-10 w-10 fill-zinc-400' />} name='Git' />
+                <SkillCard icon={<SiNextdotjs className='h-10 w-10 fill-zinc-400' />} name='NextJs' />
                 <SkillCard icon={<SiTypescript className='h-10 w-10 fill-zinc-400' />} name='TypeScript' />
                 <SkillCard icon={<SiVite className='h-10 w-10 fill-zinc-400' />} name='Vite' />
               </Carousel>
