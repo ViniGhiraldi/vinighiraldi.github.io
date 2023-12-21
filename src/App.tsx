@@ -96,7 +96,7 @@ export const App = () => {
       <div id='experience' className='relative flex flex-col bg-[#111111]'>
         <SVGInvertedBookDivider className='absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180'/>
 
-        <Box className='container mt-20 p-8 sm:px-0 flex flex-col items-center gap-12'>
+        <Box className='container my-20 p-8 sm:px-0 flex flex-col items-center gap-12'>
           <h1 className='text-5xl font-bold tracking-tighter text-center bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 text-transparent line-clamp-1'>Experiência</h1>
           <div className='relative before:content-normal sm:before:content-none before:block before:absolute before:border-8 before:border-red-500 before:w-full before:h-full'>
             <ul className='flex lg:flex-col text-lg leading-5 font-light gap-4 text-white bg-[#111111] p-8'>
