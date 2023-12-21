@@ -93,7 +93,7 @@ export const App = () => {
 
       {/* Experience */}
 
-      <div id='experience' className='min-h-screen relative flex flex-col bg-[#111111]'>
+      <div id='experience' className='relative flex flex-col bg-[#111111]'>
         <SVGInvertedBookDivider className='absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180'/>
 
         <Box className='container mt-20 p-8 sm:px-0 flex flex-col items-center gap-12'>
