@@ -4,14 +4,14 @@ import curriculo from './assets/curriculo.pdf';
 import { motion } from 'framer-motion';
 import { Box, Carousel, EducationCard, Header, SVGArrow, SVGInvertedArrowDivider, SVGInvertedBookDivider, SVGOrangeBubble, SVGTiltDivider, SVGTriangleDivider, SVGWaveOpacityDivider, SkillCard } from './shared/components';
 import { LuChevronDown, LuGithub, LuLink, LuLinkedin, LuMail, LuDownload, LuGlobe } from 'react-icons/lu';
-import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiTailwindcss, SiStyledcomponents, SiMui, SiFigma, SiGit, SiAxios, SiBootstrap, SiJquery, SiVite, SiPostgresql, SiSqlite, SiExpress, SiReactrouter, SiJest, SiJsonwebtokens, SiWhatsapp, SiNextdotjs } from 'react-icons/si';
+import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiTailwindcss, SiStyledcomponents, SiMui, SiFigma, SiGit, SiAxios, SiBootstrap, SiJquery, SiVite, SiPostgresql, SiSqlite, SiExpress, SiReactrouter, SiJest, SiJsonwebtokens, SiWhatsapp, SiNextdotjs, SiPrisma, SiFastify, SiOpenai, SiReacthookform } from 'react-icons/si';
 import { useEffect, useState } from 'react';
 import { Environment } from './shared/environment/Environment';
 
 interface IGitRepos {
   name: string;
   description: string | null;
-  updated_at: string;
+  pushed_at: string;
   language: string;
   html_url: string;
   homepage: string;
@@ -23,7 +23,7 @@ export const App = () => {
   useEffect(() => {
     fetch(`${Environment.BASE_URL}/users/ViniGhiraldi/repos`)
       .then(result => result.json())
-      .then(result => setRepositories(result))
+      .then(result => setRepositories((result as IGitRepos[]).sort((a,b) => new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime())))
       .catch(error => console.log(error));
   }, [])
 
@@ -60,13 +60,13 @@ export const App = () => {
               </motion.a>
             </div>
           </div>
-          <div className='flex items-center justify-center xs:hidden'>
+          <div className='flex items-center justify-center xs:hidden shrink-0'>
             <SVGOrangeBubble className='absolute md:hidden max-h-[80vh]' />
             <motion.img
               transition={{ type: 'spring', damping: 11, stiffness: 150 }}
               whileHover={{ scale: 1.1 }}
               src={fotoDePerfil}
-              className='relative h-72 min-w-[17rem] rounded-full'
+              className='relative h-80 rounded-full md:rounded-3xl min-w-[17rem]'
               alt='Vinícius Correia Ghiraldi'
             />
           </div>
@@ -81,12 +81,18 @@ export const App = () => {
       <div id='about' className='flex flex-col relative bg-[#272727]'>
         <SVGTriangleDivider className="absolute top-0 left-0 w-full overflow-hidden leading-[0]" />
         <Box className='container mt-20 px-8 py-20 flex justify-around items-center gap-12'>
-          <div className='bg-orange-500 p-2 rounded-md rounded-tr-3xl rounded-bl-3xl shadow-xl md:hidden'>
-            <img src={fotoApontando} className='h-72 rounded-bl-3xl' alt='Vinícius Correia Ghiraldi' />
+          <div className='bg-orange-500 rounded-3xl h-80 overflow-hidden shadow-xl md:hidden'>
+            <motion.img
+              transition={{ type: 'just' }}
+              whileHover={{ scale: 1.1 }}
+              src={fotoApontando}
+              className='h-full'
+              alt='Vinícius Correia Ghiraldi'
+            />
           </div>
           <div className='flex flex-col items-center gap-4'>
             <h1 className='text-center text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent line-clamp-2 w-fit'>Quem Sou Eu</h1>
-            <p className='max-w-sm text-white text-lg font-inter font-light leading-5'>Nascido em 2004 no interior de São Paulo, conheci a programação no ano de 2020 em uma escola técnica. Foi amor a primeira vista, já que eu sempre gostei de desafios de lógica. Em 2023 me tornei um entusiasta de JavaScript, e desde então tenho focado em aprender sobre ReactJs, NodeJs e TypeScript. Em Julho do mesmo ano iniciei uma graduação em Engenharia de Software na Unicesumar. Além de programação, adoro atividades físicas e esportes, e no meu tempo livre gosto de me divertir e competir em jogos online.</p>
+            <p className='max-w-sm text-white text-lg font-inter font-light leading-tight'>Nascido em 2004 no interior de São Paulo, conheci a programação no ano de 2020 em uma escola técnica. Foi amor a primeira vista, já que eu sempre gostei de desafios de lógica. Em 2023 me tornei um entusiasta de JavaScript e desde então tenho focado em aprender sobre ReactJs, NodeJs e TypeScript. Além de programação, adoro atividades físicas e esportes, e no meu tempo livre gosto de me divertir e competir em jogos online.</p>
           </div>
         </Box>
       </div>
@@ -98,17 +104,11 @@ export const App = () => {
 
         <Box className='container my-20 p-8 sm:px-0 flex flex-col items-center gap-12'>
           <h1 className='text-5xl font-bold tracking-tighter text-center bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 text-transparent line-clamp-1'>Experiência</h1>
-          <div className='relative before:content-normal sm:before:content-none before:block before:absolute before:border-8 before:border-red-500 before:w-full before:h-full'>
-            <ul className='flex lg:flex-col text-lg leading-5 font-light gap-4 text-white bg-[#111111] p-8'>
-              <li className='flex xs:flex-col gap-4 font-inter before:content-["2020_2022"] before:relative before:block before:bg-gradient-to-r before:from-orange-500 before:to-red-500 before:bg-clip-text before:text-transparent before:font-bold before:font-exo'>Durante o ano de 2022, apresentei projetos e ideias em Workshops, entre eles um protótipo de um sistema informativo sobre clínicas e hospitais. Seu objetivo era informar ao usuário as instituições mais próximas de sua localização com avaliações de outras pessoas, profissionais atuantes, formações e horários disponíveis, podendo ainda filtrar os resultados por profissionais (cardiologista, veterinário...). Este projeto foi desenvolvido e apresentado no TCC de Desenvolvimento de Sistemas na ETEC Dr. Nelson Alves Vianna e obteve nota máxima.</li>
-              <li className='flex xs:flex-col gap-4 font-inter before:content-["2023"] before:relative before:block before:bg-gradient-to-r before:from-orange-500 before:to-red-500 before:bg-clip-text before:text-transparent before:font-bold before:font-exo'>
-                <span>
-                  Estou sempre pronto e em busca de trabalhos voluntários na área de desenvolvimento de software, Atuo através do LinkedIn, entrando em contato com as empresas e do <a href="https://atados.com.br" target='_blank'>Atados</a>.
-                </span>
-              </li>
-              <li className='flex xs:flex-col gap-4 font-inter before:content-["-"] before:relative before:block before:bg-gradient-to-r before:from-orange-500 before:to-red-500 before:bg-clip-text before:text-transparent before:font-bold before:font-exo'>Atualmente atuo como freelancer e estudo tecnologias JavaScript, com foco em ReactJs e NodeJs. Também estou me especializando em frameworks e bibliotecas em alta no mercado, como TailwindCSS e Express. Em julho de 2023, iniciei uma graduação em Engenharia de Software.</li>
-            </ul>
-          </div>
+          <ul className=' flex flex-col gap-4 text-white leading-5 px-4 border-l-4 sm:border-none rounded-l-lg border-red-500'>
+            <li className='font-inter flex sm:flex-col gap-4 before:content-["2020_2022"] before:bg-gradient-to-r before:from-orange-500 before:to-red-500 before:bg-clip-text before:text-transparent before:font-bold before:font-exo'>Meus colegas e eu desenvolvemos um protótipo de um sistema informativo sobre clínicas e hospitais. Seu objetivo era informar ao usuário as instituições mais próximas de sua localização com avaliações de outras pessoas, profissionais atuantes, formações e horários disponíveis, podendo ainda filtrar os resultados por profissionais (cardiologista, veterinário...). Este projeto foi construido e apresentado no TCC de Desenvolvimento de Sistemas na ETEC Dr. Nelson Alves Vianna e obteve nota máxima.</li>
+            <li className='font-inter flex sm:flex-col gap-4 before:content-["2023"] before:bg-gradient-to-r before:from-orange-500 before:to-red-500 before:bg-clip-text before:text-transparent before:font-bold before:font-exo'>Em 2023 ingressei na Frangoeste Avicultura LTDA como Auxiliar de Tecnologia da Informação, empresa em que permaneço até os dias de hoje. Neste cargo, sou responsável por atender chamados referentes a problemas de hardware e software dos computadores e auxiliar nas atividades gerais.</li>
+            <li className='font-inter flex sm:flex-col gap-4 before:content-["-"] before:bg-gradient-to-r before:from-orange-500 before:to-red-500 before:bg-clip-text before:text-transparent before:font-bold before:font-exo'>No meu 5º mês na empresa, juntamente a um desenvolvedor de outra unidade, criei um questionário dinâmico integrado com um software interno para a coleta de feedback dos consumidores. O mesmo foi utilizado na feira APAS Show de 2024 e está sendo implementado em outras unidades e projetos futuros.</li>
+          </ul>
         </Box>
       </div>
 
@@ -127,18 +127,23 @@ export const App = () => {
                 <SkillCard icon={<SiBootstrap className='h-10 w-10 fill-zinc-400' />} name='Bootstrap' />
                 <SkillCard icon={<SiJquery className='h-10 w-10 fill-zinc-400' />} name='JQuery' />
                 <SkillCard icon={<SiMui className='h-10 w-10 fill-zinc-400' />} name='MUI' />
+                <SkillCard icon={<SiNextdotjs className='h-10 w-10 fill-zinc-400' />} name='NextJs' />
+                <SkillCard icon={<SiReacthookform className='h-10 w-10 fill-zinc-400' />} name='React Hook Form' />
                 <SkillCard icon={<SiReactrouter className='h-10 w-10 fill-zinc-400' />} name='React Router' />
                 <SkillCard icon={<SiStyledcomponents className='h-10 w-10 fill-zinc-400' />} name='Styled Components' />
                 <SkillCard icon={<SiTailwindcss className='h-10 w-10 fill-zinc-400' />} name='TailwindCSS' />
+                <SkillCard icon={<SiVite className='h-10 w-10 fill-zinc-400' />} name='Vite' />
               </Carousel>
             </div>
             <div className='space-y-4 max-w-full'>
               <h2 className='text-3xl font-inter font-bold text-red-500'>Back-End</h2>
               <Carousel>
                 <SkillCard icon={<SiExpress className='h-10 w-10 fill-zinc-400' />} name='Express' />
+                <SkillCard icon={<SiFastify className='h-10 w-10 fill-zinc-400' />} name='Fastify' />
                 <SkillCard icon={<SiJest className='h-10 w-10 fill-zinc-400' />} name='Jest' />
                 <SkillCard icon={<SiJsonwebtokens className='h-10 w-10 fill-zinc-400' />} name='JsonWebTokens' />
                 <SkillCard icon={<SiPostgresql className='h-10 w-10 fill-zinc-400' />} name='PostgreSQL' />
+                <SkillCard icon={<SiPrisma className='h-10 w-10 fill-zinc-400' />} name='Prisma' />
                 <SkillCard icon={<SiSqlite className='h-10 w-10 fill-zinc-400' />} name='SQLite' />
               </Carousel>
             </div>
@@ -147,9 +152,8 @@ export const App = () => {
               <Carousel>
                 <SkillCard icon={<SiFigma className='h-10 w-10 fill-zinc-400' />} name='Figma' />
                 <SkillCard icon={<SiGit className='h-10 w-10 fill-zinc-400' />} name='Git' />
-                <SkillCard icon={<SiNextdotjs className='h-10 w-10 fill-zinc-400' />} name='NextJs' />
+                <SkillCard icon={<SiOpenai className='h-10 w-10 fill-zinc-400' />} name='OpenAI' />
                 <SkillCard icon={<SiTypescript className='h-10 w-10 fill-zinc-400' />} name='TypeScript' />
-                <SkillCard icon={<SiVite className='h-10 w-10 fill-zinc-400' />} name='Vite' />
               </Carousel>
             </div>
           </div>
@@ -163,10 +167,10 @@ export const App = () => {
         <Box className='container p-8 sm:px-0 flex flex-col items-center gap-12'>
           <h1 className='text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent line-clamp-1'>Projetos</h1>
           <div className='grid grid-cols-2 sm:grid-cols-1 p-8 gap-8 rounded-3xl sm:rounded-lg shadow-[0_0_30px_#00000099] bg-gradient-to-br from-[#272727] to-[#111111]'>
-            {repositories.map((repo, i) => (
+            {repositories.map((repo, i) => repo.language && (
               <motion.div key={i} whileHover={{ scale: 1.025 }} className='p-4 rounded-md shadow-[0_5px_10px_0_#00000099] grid-cols-1 border-2 border-orange-500 text-white flex flex-col justify-between gap-4'>
                 <h1 className='text-xl tracking-wider line-clamp-1' title={repo.name}>{repo.name}</h1>
-                <p className='text-base font-inter leading-5 line-clamp-5'>{repo.description}</p>
+                {repo.description && <p className='text-base font-inter leading-5 line-clamp-5'>{repo.description}</p>}
                 <div className='space-y-2'>
                   <span className='font-inter text-sm tracking-wider px-4 rounded-full shadow-md bg-gradient-to-b from-orange-500 to-red-500 line-clamp-1 max-w-fit'>{repo.language}</span>
                   <div className='flex gap-4'>
@@ -191,9 +195,9 @@ export const App = () => {
             <h1 className='text-5xl text-orange-500 tracking-tighter font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent line-clamp-1'>Educação</h1>
 
             <div className='grid grid-cols-2 sm:grid-cols-1 gap-8 w-full items-start'>
-              <EducationCard course='Análise e Desenvolvimento de Sistemas' institution='ETEC Dr. Nelson Alves Vianna' graduation='Curso técnico' duration='3 anos | 2020 - 2023' concluded />
-
+              <EducationCard course='Análise e Desenvolvimento de Sistemas' institution='CEUNSP' graduation='Curso superior' duration='2 anos | 2024 - 2026' />
               <EducationCard course='Engenharia de Software' institution='Unicesumar' graduation='Curso superior' duration='4 anos | 2023 - 2027' />
+              
             </div>
           </div>
         </Box>
